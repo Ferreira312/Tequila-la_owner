@@ -7,5 +7,6 @@ Ideias
 - Spot de venda de drogas (preço configuravel), só vende se tiver drogas no cofre do clube.
 - Spot de venda de bebidas (preço configuravel), só vende se tiver bebidas no cofre do clube.
 - Cofre do clube, guarda as drogas, bebidas e dinheiro das entradas.
+- Sistema de kick de player dentro do club.
 
 Ver o que podemos fazer em relção a musica e NPCs
