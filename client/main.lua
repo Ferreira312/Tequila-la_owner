@@ -41,6 +41,9 @@ function OpenTakeMoneyMenu() -- Levantar o dinheiro
 
 end
 
+function OpenChangeEntrypay() -- Alterar Valor de entrada entre o max e o min na config
+
+end
 
 function OpenvaultMenu(station) -- Armario do club
 
@@ -52,7 +55,8 @@ function OpenvaultMenu(station) -- Armario do club
     }
 
     if PlayerData.job.grade_name == 'boss' then
-      table.insert(elements, {label = 'Levantar dinheiro' , value = 'take_money'})
+      table.insert(elements, {label = 'Levantar dinheiro' , value = 'take_money'}),
+      table.insert(elements, {label = 'Alterar preço de entrada' , value = 'entry_payment'})
     end
 
     ESX.UI.Menu.CloseAll()
@@ -76,6 +80,10 @@ function OpenvaultMenu(station) -- Armario do club
 
          if data.current.value == 'take_money' then
            OpenTakeMoneyMenu()
+         end
+
+         if data.current.value == 'entry_payment' then
+          OpenChangeEntrypay()
          end
       end,
       function(data, menu)
