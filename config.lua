@@ -3,6 +3,7 @@ Config.DrawDistance               = 100.0
 Config.MarkerType                 = 1
 Config.MarkerSize                 = { x = 1.5, y = 1.5, z = 1.0 }
 Config.MarkerColor                = { r = 114, g = 170, b = 110 }
+Config.EnableVaultManagement      = true
 Config.Pentry                     = { min = 15, max = 100 }
 
 Config.ClubStations = {
