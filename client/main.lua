@@ -35,13 +35,76 @@ end)
 
 function OpenEntryPayment() -- Entrada
 
+  ESX.UI.Menu.Open(
+          'dialog', GetCurrentResourceName(), 'pay_money_amount_' .. society,
+          {
+            title = _U('take_amount')
+          },
+          function(data, menu)
+
+            local amount = tonumber(data.value)
+
+            if amount == nil and amount =~ Config.Pentry then --- Isto deve estar errado
+              ESX.ShowNotification(_U('invalid_amount'))
+            else
+              menu.close()
+              TriggerServerEvent('esx_club:payMoney', society, amount) --server
+            end
+
+          end,
+          function(data, menu)
+            menu.close()
+          end
+
+
 end
 
 function OpenTakeMoneyMenu() -- Levantar o dinheiro
 
+ESX.UI.Menu.Open(
+          'dialog', GetCurrentResourceName(), 'take_money_amount_' .. society,
+          {
+            title = _U('take_amount')
+          },
+          function(data, menu)
+
+            local amount = tonumber(data.value)
+
+            if amount == nil then
+              ESX.ShowNotification(_U('invalid_amount'))
+            else
+              menu.close()
+              TriggerServerEvent('esx_club:takeMoney', society, amount) --server
+            end
+
+          end,
+          function(data, menu)
+            menu.close()
+          end
+
 end
 
 function OpenChangeEntrypay() -- Alterar Valor de entrada entre o max e o min na config
+
+ESX.UI.Menu.Open( 'dialog', GetCurrentResourceName(), 'entry_money_amount_' .. society,
+          {
+            title = _U('entry_amount')
+          },
+          function(data, menu)
+
+            local amount = tonumber(data.value)
+
+            if amount == nil then
+              ESX.ShowNotification(_U('invalid_amount'))
+            else
+              menu.close()
+              TriggerServerEvent('esx_club:entryMoney', society, amount) --server
+            end
+
+          end,
+          function(data, menu)
+            menu.close()
+          end
 
 end
 
