@@ -1,5 +1,5 @@
 ESX = nil
-
+--Alterar Society para outro nome society_club?
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 if Config.MaxInService ~= -1 then
@@ -48,21 +48,6 @@ AddEventHandler('esx_club:putStockItems', function(itemName, count)
     end
 
     TriggerClientEvent('esx:showNotification', xPlayer.source, _U('added') .. count .. ' ' .. item.label)
-
-  end)
-
-end)
-
-ESX.RegisterServerCallback('esx_club:buy', function(source, cb, amount)
-
-  TriggerEvent('esx_addonaccount:getSharedAccount', 'society_biker', function(account)
-
-    if account.money >= amount then
-      account.removeMoney(amount)
-      cb(true)
-    else
-      cb(false)
-    end
 
   end)
 
