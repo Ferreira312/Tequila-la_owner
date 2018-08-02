@@ -53,6 +53,21 @@ AddEventHandler('esx_club:putStockItems', function(itemName, count)
 
 end)
 
+ESX.RegisterServerCallback('esx_club:buy', function(source, cb, amount)
+
+  TriggerEvent('esx_addonaccount:getSharedAccount', 'society_biker', function(account)
+
+    if account.money >= amount then
+      account.removeMoney(amount)
+      cb(true)
+    else
+      cb(false)
+    end
+
+  end)
+
+end)
+
 
 ESX.RegisterServerCallback('esx_club:getStockItems', function(source, cb)
 
