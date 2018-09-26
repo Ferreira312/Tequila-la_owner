@@ -44,7 +44,7 @@ function OpenEntryPayment() -- Entrada
 
             local amount = tonumber(data.value)
 
-            if amount == nil and amount =~ Config.Pentry then --- Isto deve estar errado
+            if amount == nil or amount ~= Config.Pentry then --- Isto deve estar errado
               ESX.ShowNotification(_U('invalid_amount'))
             else
               menu.close()
