@@ -117,7 +117,7 @@ function OpenvaultMenu(station) -- Armario do club
     }
 
     if PlayerData.job.grade_name == 'boss' then
-      table.insert(elements, {label = 'Levantar dinheiro' , value = 'take_money'}),
+      table.insert(elements, {label = 'Levantar dinheiro' , value = 'take_money'})
       table.insert(elements, {label = 'Alterar preço de entrada' , value = 'entry_payment'})
     end
 
@@ -408,6 +408,7 @@ Citizen.CreateThread(function()
         TriggerEvent('esx_clubowner:hasExitedMarker', LastStation, LastPart, LastPartNum)
       end
 
+     end
     end
 
   end
