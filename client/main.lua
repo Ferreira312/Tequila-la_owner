@@ -55,13 +55,12 @@ function OpenEntryPayment() -- Entrada
           function(data, menu)
             menu.close()
           end
-
-
+  )
 end
 
 function OpenTakeMoneyMenu() -- Levantar o dinheiro
 
-ESX.UI.Menu.Open(
+  ESX.UI.Menu.Open(
           'dialog', GetCurrentResourceName(), 'take_money_amount_' .. society,
           {
             title = _U('take_amount')
@@ -81,12 +80,12 @@ ESX.UI.Menu.Open(
           function(data, menu)
             menu.close()
           end
-
+  )
 end
 
 function OpenChangeEntrypay() -- Alterar Valor de entrada entre o max e o min na config
 
-ESX.UI.Menu.Open( 'dialog', GetCurrentResourceName(), 'entry_money_amount_' .. society,
+  ESX.UI.Menu.Open( 'dialog', GetCurrentResourceName(), 'entry_money_amount_' .. society,
           {
             title = _U('entry_amount')
           },
@@ -105,7 +104,7 @@ ESX.UI.Menu.Open( 'dialog', GetCurrentResourceName(), 'entry_money_amount_' .. s
           function(data, menu)
             menu.close()
           end
-
+  )
 end
 
 function OpenvaultMenu(station) -- Armario do club
